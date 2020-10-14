@@ -108,6 +108,7 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points * len(aliens)
             
             self.sb.prep_score()
+            self.prep_level()
 
 
         if not self.aliens:
@@ -115,6 +116,10 @@ class AlienInvasion:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+
+            #increase level
+            self.stats.level += 1
+            self.sb.prep_level()
     
     def _update_aliens(self):
         '''Update the position of all aliens in the fleet'''
@@ -159,6 +164,7 @@ class AlienInvasion:
             self.stats.reset_stats()
             self.stats.game_active = True
             self.sb.prep_score()
+            self.sb.prep_level()
 
             #Get rid of any remaining aliens or bullets
             self.aliens.empty()
