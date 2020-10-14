@@ -6,7 +6,7 @@ class Bullet(Sprite):
     def __init__(self, ai_game):
         '''Create a bullet object at the ships current position'''
         super().__init__()
-        self.sceen = ai_game.screen
+        self.screen = ai_game.screen
         self.settings = ai_game.settings
         self.color = self.settings.bullet_color
 
@@ -20,7 +20,7 @@ class Bullet(Sprite):
     def update(self):
         '''Move bullet up the screen'''
         #update the decimal position of the bullet
-        self.y -= self.setting.bullet_speed
+        self.y -= self.settings.bullet_speed
         #update the rect position
         self.rect.y = self.y
 
@@ -28,4 +28,6 @@ class Bullet(Sprite):
     def draw_bullet(self):
         '''Draw the bullet to the screen'''
         pygame.draw.rect(self.screen, self.color, self.rect)
+
+#We edit the bullet here, much like all the other individual files this keeps things clean and allows us to come find and edit the exact parts that we need too
                
