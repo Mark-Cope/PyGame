@@ -283,7 +283,7 @@ class AlienInvasion:
         self.settings.fleet_direction *= -1
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
 
 #Make a game instance, and run the game                                   #Where the game is actually called which makes it run
     ai = AlienInvasion()
